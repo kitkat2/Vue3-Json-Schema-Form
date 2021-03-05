@@ -9,9 +9,7 @@ export default defineComponent({
   props: FieldPropsDefine,
   setup(props) {
     const value: any = ref(props.value)
-    console.log('ccc', value)
     const handleChange = (e: any) => {
-      console.log('e', e.target.value)
       const value = e.target.value
       if (isNaN(value)) {
         props.onChange(undefined)

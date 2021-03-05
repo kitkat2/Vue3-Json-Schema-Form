@@ -16,7 +16,7 @@ export default defineComponent({
     watch(
       () => props.value,
       (newVal) => {
-        value.value = newVal as string
+        value.value = newVal
       },
     )
     return {

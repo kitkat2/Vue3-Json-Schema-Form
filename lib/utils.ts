@@ -68,11 +68,11 @@ export function retrieveSchema(
   // TODO: allOf and additionalProperties not implemented
   if ('allOf' in schema) {
     try {
-      resolvedSchema = mergeAllOf({
+      resolvedSchema = (mergeAllOf({
         // TODO: Schema type not suitable
         ...resolvedSchema,
         allOf: resolvedSchema.allOf,
-      } as any) as Schema
+      } as any) as unknown) as Schema
     } catch (e) {
       console.warn('could not merge subschemas in allOf:\n' + e)
       const { allOf, ...resolvedSchemaWithoutAllOf } = resolvedSchema

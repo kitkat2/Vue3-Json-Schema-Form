@@ -6,7 +6,7 @@ const schema = {
   properties: {
     name: {
       type: 'string',
-      format: 'email', // format 只针对string类型和number类型
+      format: 'test', // format 只针对string类型和number类型
       // testk: true,
       errorMessage: {
         type: '必须是字符串',

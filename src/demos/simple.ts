@@ -6,15 +6,40 @@ export default {
     required: ['firstName', 'lastName'],
     properties: {
       firstName: {
+        title: 'firstName',
         type: 'string',
         default: 'Chuck',
+        minLength: 10,
       },
       lastName: {
-        type: 'string',
-      },
-      telephone: {
+        title: 'lastName',
         type: 'string',
         minLength: 10,
+      },
+      telephone: {
+        title: 'telephone',
+        type: 'string',
+        minLength: 10,
+      },
+      staticArray: {
+        type: 'array',
+        items: [
+          { type: 'string', minLength: 10, title: 'string' },
+          { type: 'number', title: 'number' },
+        ],
+      },
+      singleTypeArray: {
+        title: 'singleTypeArray',
+        type: 'array',
+        items: { type: 'string', title: 'singleTypeArray Item' },
+      },
+      singleEnumArray: {
+        type: 'array',
+        title: 'singleEnumArray',
+        items: {
+          type: 'string',
+          enum: ['123', '456', '789'],
+        },
       },
     },
   },
@@ -38,5 +63,6 @@ export default {
     age: 75,
     bio: 'Roundhouse kicking asses since 1940',
     password: 'noneed',
+    singleTypeArray: ['pp'],
   },
 }
