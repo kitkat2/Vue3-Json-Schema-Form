@@ -1,6 +1,6 @@
 import { DefineComponent, PropType } from 'vue'
 import { ErrorSchema } from './validator'
-import SelectionWidget from './widgets/Selection'
+import { FormatDefinition } from 'ajv'
 
 export enum SchemaTypes {
   'NUMBER' = 'number',
@@ -18,6 +18,7 @@ export interface Schema {
   const?: any
   format?: string
   title?: string
+  placeholder?: string
   default?: any
 
   properties?: {
@@ -69,6 +70,10 @@ export const FieldPropsDefine = {
     type: Object as PropType<ErrorSchema>,
     required: true,
   },
+  uiSchema: {
+    type: Object as PropType<UISchema>,
+    required: true,
+  },
 } as const
 
 export type CommonFieldType = DefineComponent<typeof FieldPropsDefine>
@@ -85,6 +90,9 @@ export const CommonWidgetPropsDefine = {
   schema: {
     type: Object as PropType<Schema>,
     required: true,
+  },
+  options: {
+    type: Object as PropType<{ [key: string]: any }>,
   },
 } as const
 export type CommonWidgetType = DefineComponent<typeof CommonWidgetPropsDefine>
@@ -119,4 +127,20 @@ export interface Theme {
     [CommonWidgetNames.TextWidget]: CommonWidgetType
     [CommonWidgetNames.NumberWidget]: CommonWidgetType
   }
+}
+
+export type UISchema = {
+  widget?: string | CommonWidgetType
+  properties?: {
+    [key: string]: UISchema
+  }
+  items?: UISchema | UISchema[]
+} & {
+  [key: string]: any
+}
+
+export interface CustomFormat {
+  name: string
+  definition: FormatDefinition
+  component: CommonWidgetType
 }

@@ -3,12 +3,12 @@ import { defineComponent, Ref, ref, reactive, watchEffect } from 'vue'
 import MonacoEditor from './components/MonacoEditor'
 
 import demos from './demos'
-
 import SchemaForm, { ThemeProvider } from '../lib'
 
 import { createUseStyles } from 'vue-jss'
 
 import themeDefault from '../lib/theme-default/index'
+import format from './plugins/customFormat'
 
 type Schema = any
 type UISchema = any
@@ -107,8 +107,6 @@ export default defineComponent({
       demo.uiSchemaCode = toJson(d.uiSchema)
       demo.customValidate = d.customValidate
     })
-
-    const methodRef: Ref<any> = ref()
     const classesRef = useStyles()
 
     const handleChange = (v: any) => {
@@ -134,6 +132,11 @@ export default defineComponent({
     const handleSchemaChange = (v: string) => handleCodeChange('schema', v)
     const handleDataChange = (v: string) => handleCodeChange('data', v)
     const handleUISchemaChange = (v: string) => handleCodeChange('uiSchema', v)
+    const validateForm = () => {
+      contextRef.value.doValidate().then((res: any) => {
+        console.log(res)
+      })
+    }
     const contextRef = ref()
     return () => {
       const classes = classesRef.value
@@ -182,11 +185,13 @@ export default defineComponent({
             <div class={classes.form}>
               <ThemeProvider theme={themeDefault}>
                 <SchemaForm
+                  uiSchema={demo.uiSchema || {}}
                   schema={demo.schema}
                   onChange={handleChange}
                   value={demo.data}
                   contextRef={contextRef}
                   customValidate={demo.customValidate}
+                  customFormats={format}
                 />
               </ThemeProvider>
 
@@ -197,11 +202,7 @@ export default defineComponent({
                 contextRef={methodRef}
                 value={demo.data}
               /> */}
-              <button
-                onClick={() => console.log(contextRef.value.doValidate())}
-              >
-                校 验
-              </button>
+              <button onClick={validateForm}>校 验</button>
             </div>
           </div>
         </div>

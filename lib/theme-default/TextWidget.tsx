@@ -1,6 +1,8 @@
 import { CommonWidgetPropsDefine, CommonWidgetType } from '../types'
-import { defineComponent } from 'vue'
+import { defineComponent, computed } from 'vue'
 import { withFormItem } from './FormItem'
+import 'ant-design-vue/lib/input/style/css'
+import AInput from 'ant-design-vue/lib/input'
 const TextWidget: CommonWidgetType = withFormItem(
   defineComponent({
     name: 'TextWidget',
@@ -11,12 +13,21 @@ const TextWidget: CommonWidgetType = withFormItem(
         e.target.value = props.value
         props.onChange(value)
       }
+      const styleRef = computed(() => {
+        return {
+          color: (props.options && props.options.color) || 'black',
+        }
+      })
       return () => {
+        const { schema } = props
+        console.log('schema --->', schema)
         return (
-          <input
+          <AInput
             type="text"
             value={props.value as any}
-            onInput={handleChange}
+            style={styleRef.value}
+            placeholder={schema.placeholder || '请输入'}
+            onChange={handleChange}
           />
         )
       }

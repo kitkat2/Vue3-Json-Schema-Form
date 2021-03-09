@@ -6,6 +6,7 @@ const useStyles = createUseStyles({
   label: {
     display: 'block',
     color: '#777',
+    padding: '5px 0px',
   },
   errorText: {
     marginTop: 5,

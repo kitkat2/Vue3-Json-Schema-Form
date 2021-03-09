@@ -5,20 +5,32 @@ import { useVJSFContext } from '../context'
 import { createUseStyles } from 'vue-jss'
 
 import { getWidget } from '../theme'
+import {
+  CaretUpOutlined,
+  CaretDownOutlined,
+  PlusOutlined,
+  DeleteFilled,
+} from '@ant-design/icons-vue'
 // import SelectionWidget from '../widgets/Selection';
 
 const useStyles = createUseStyles({
   container: {
     border: '1px solid #eee',
+    marginBottom: 10,
   },
   actions: {
     backgroundColor: '#eee',
-    padding: 10,
+    color: '#888',
+    fontSize: '18',
+    padding: 5,
     textAlign: 'right',
   },
   action: {
     '&+&': {
       marginLeft: 10,
+    },
+    '&:hover': {
+      color: '#40a9ff',
     },
   },
   content: {
@@ -77,18 +89,29 @@ const ArrayItemWrapper = defineComponent({
       return (
         <div class={classes.container}>
           <div class={classes.actions}>
-            <button class={classes.action} onClick={handleAdd}>
-              新增
-            </button>
-            <button class={classes.action} onClick={handleDelete}>
-              删除
-            </button>
-            <button class={classes.action} onClick={handleUp}>
-              上移
-            </button>
-            <button class={classes.action} onClick={handleDown}>
+            <PlusOutlined
+              title="添加"
+              class={classes.action}
+              onClick={handleAdd}
+            />
+            <DeleteFilled
+              title="删除"
+              class={classes.action}
+              onClick={handleDelete}
+            />
+            <CaretUpOutlined
+              title="上移"
+              class={classes.action}
+              onClick={handleUp}
+            />
+            <CaretDownOutlined
+              title="下移"
+              class={classes.action}
+              onClick={handleDown}
+            />
+            {/* <button class={classes.action} onClick={handleDown}>
               下移
-            </button>
+            </button> */}
           </div>
           <div class={classes.content}>{slots.default && slots.default()}</div>
         </div>
@@ -137,7 +160,7 @@ export default defineComponent({
     }
     const SelectionWidgetRef = getWidget(SelectionWidgetNames.SelectionWidget)
     return () => {
-      const { schema, rootSchema, value, errorSchema } = props
+      const { schema, rootSchema, value, errorSchema, uiSchema } = props
       const SchemaItem = context.SchemaItem
       const isMultiType = Array.isArray(schema.items) // 判断items是否为数组
       const isSelect = schema.items && (schema.items as any).enum
@@ -147,8 +170,13 @@ export default defineComponent({
       if (isMultiType) {
         const items: Schema[] = schema.items as Schema[]
         return items!.map((s: Schema, index: number) => {
+          const itemsUiSchema = uiSchema.items
+          const us = Array.isArray(itemsUiSchema)
+            ? itemsUiSchema[index] || {}
+            : itemsUiSchema || {}
           return (
             <SchemaItem
+              uiSchema={us}
               schema={s}
               key={index}
               rootSchema={rootSchema}
@@ -171,6 +199,7 @@ export default defineComponent({
             >
               <SchemaItem
                 schema={schema.items as Schema}
+                uiSchema={(uiSchema.items as any) || {}}
                 errorSchema={errorSchema[index] || {}}
                 value={v}
                 key={index}

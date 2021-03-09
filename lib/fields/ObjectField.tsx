@@ -17,15 +17,15 @@ export default defineComponent({
       props.onChange(value)
     }
     return () => {
-      const { schema, rootSchema, value, errorSchema } = props
+      const { schema, rootSchema, value, errorSchema, uiSchema } = props
       const { SchemaItem } = context
       const properties = schema.properties || {}
       const crtValue: any = isObject(value) ? value : {} // crtValue 类型只能给到any 不确定默认值具体是什么
 
       return Object.keys(properties).map((k: string, index: number) => {
-        console.log(k, index, '-----', errorSchema)
         return (
           <SchemaItem
+            uiSchema={uiSchema.properties ? uiSchema.properties[k] || {} : {}}
             schema={properties[k]}
             rootSchema={rootSchema}
             errorSchema={errorSchema[k] || {}}

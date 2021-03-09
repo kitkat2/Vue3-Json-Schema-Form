@@ -72,7 +72,8 @@ export default defineComponent({
       ))
       _subscription = editor.onDidChangeModelContent((event: any) => {
         console.log('--------->', __prevent_trigger_change_event) // eslint-disable-line
-        if (!__prevent_trigger_change_event) { // eslint-disable-line
+        // eslint-disable-next-line
+        if (!__prevent_trigger_change_event) {
           props.onChange(editor.getValue(), event)
         }
       })
@@ -89,7 +90,7 @@ export default defineComponent({
         const model = editor.getModel()
         if (v !== model.getValue()) {
           editor.pushUndoStop()
-        __prevent_trigger_change_event = true // eslint-disable-line
+          __prevent_trigger_change_event = true // eslint-disable-line
           // pushEditOperations says it expects a cursorComputer, but doesn't seem to need one.
           model.pushEditOperations(
             [],
@@ -101,7 +102,7 @@ export default defineComponent({
             ],
           )
           editor.pushUndoStop()
-        __prevent_trigger_change_event = false // eslint-disable-line
+          __prevent_trigger_change_event = false // eslint-disable-line
         }
         // if (v !== editorRef.value.getValue()) {
         //   editorRef.value.setValue(v)

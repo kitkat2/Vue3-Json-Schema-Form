@@ -62,7 +62,7 @@ function transformErrors(
     }
   })
 }
-export function validateFormData(
+export async function validateFormData(
   validator: Ajv.Ajv,
   formData: any,
   schema: Schema,
@@ -95,7 +95,7 @@ export function validateFormData(
     }
   }
   const proxy = createErrorProxy()
-  customValidate(formData, proxy)
+  await customValidate(formData, proxy)
   const newErrorSchema = mergeObjects(errorSchema, proxy, true)
   return {
     errors,
@@ -121,7 +121,7 @@ function createErrorProxy() {
       const res = Reflect.get(target, key, receiver)
       if (res === undefined) {
         const p: any = createErrorProxy()
-        res[key] = p
+        ;(target as any)[key] = p
         return p
       }
       return res

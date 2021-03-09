@@ -1,24 +1,21 @@
 import { CommonWidgetPropsDefine, CommonWidgetType, Schema } from '../types'
 import { defineComponent } from 'vue'
 import { withFormItem } from './FormItem'
-
+import 'ant-design-vue/lib/input-number/style/css'
+import AInputNumber from 'ant-design-vue/lib/input-number'
 const NumberWidget: CommonWidgetType = withFormItem(
   defineComponent({
     name: 'NumberWidget',
     props: CommonWidgetPropsDefine,
     setup(props) {
-      const handleChange = (e: any) => {
-        const value = e.target.value
-        e.target.value = props.value
-        props.onChange(value)
+      const handleChange = (value: number) => {
+        const val = value
+        value = props.value as number
+        props.onChange(val)
       }
       return () => {
         return (
-          <input
-            type="number"
-            value={props.value as any}
-            onInput={handleChange}
-          />
+          <AInputNumber value={props.value as any} onChange={handleChange} />
         )
       }
     },

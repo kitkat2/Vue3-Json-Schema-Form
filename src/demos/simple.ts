@@ -36,6 +36,7 @@ export default {
       singleEnumArray: {
         type: 'array',
         title: 'singleEnumArray',
+        placeholder: '请选择一个数字',
         items: {
           type: 'string',
           enum: ['123', '456', '789'],
