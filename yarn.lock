@@ -46,7 +46,7 @@
   "resolved" "https://registry.npm.taobao.org/@babel/compat-data/download/@babel/compat-data-7.12.7.tgz"
   "version" "7.12.7"
 
-"@babel/core@^7.1.0", "@babel/core@^7.11.0":
+"@babel/core@^7.1.0", "@babel/core@^7.11.0", "@babel/core@7.x":
   "integrity" "sha1-/UUMTsEM27mA4pKLeqeihIRZP8g="
   "resolved" "https://registry.npm.taobao.org/@babel/core/download/@babel/core-7.12.9.tgz?cache=0&sync_timestamp=1606251985807&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fcore%2Fdownload%2F%40babel%2Fcore-7.12.9.tgz"
   "version" "7.12.9"
@@ -1704,14 +1704,14 @@
     "fork-ts-checker-webpack-plugin-v5" "npm:fork-ts-checker-webpack-plugin@^5.0.11"
 
 "@vue/cli-plugin-unit-jest@~4.5.0":
-  "integrity" "sha1-hejk2d5GDbFeWFdpmGt/D+Np8Yo="
-  "resolved" "https://registry.npm.taobao.org/@vue/cli-plugin-unit-jest/download/@vue/cli-plugin-unit-jest-4.5.9.tgz?cache=0&sync_timestamp=1605594168300&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-unit-jest%2Fdownload%2F%40vue%2Fcli-plugin-unit-jest-4.5.9.tgz"
-  "version" "4.5.9"
+  "integrity" "sha512-PGpWz1RB9mfSJ5diTshFJUZsAschJBdLtJl7mmou/AVH2Yf8gTy3Zh9YZwkvhGt/wKXFbincmL6tyAQFGMa8Ow=="
+  "resolved" "https://registry.npmjs.org/@vue/cli-plugin-unit-jest/-/cli-plugin-unit-jest-4.5.11.tgz"
+  "version" "4.5.11"
   dependencies:
     "@babel/core" "^7.11.0"
     "@babel/plugin-transform-modules-commonjs" "^7.9.6"
     "@types/jest" "^24.0.19"
-    "@vue/cli-shared-utils" "^4.5.9"
+    "@vue/cli-shared-utils" "^4.5.11"
     "babel-core" "^7.0.0-bridge.0"
     "babel-jest" "^24.9.0"
     "babel-plugin-transform-es2015-modules-commonjs" "^6.26.2"
@@ -1729,7 +1729,7 @@
   "resolved" "https://registry.npm.taobao.org/@vue/cli-plugin-vuex/download/@vue/cli-plugin-vuex-4.5.9.tgz?cache=0&sync_timestamp=1605595922601&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-plugin-vuex%2Fdownload%2F%40vue%2Fcli-plugin-vuex-4.5.9.tgz"
   "version" "4.5.9"
 
-"@vue/cli-service@~4.5.0":
+"@vue/cli-service@^3.0.0 || ^4.0.0-0", "@vue/cli-service@~4.5.0":
   "integrity" "sha1-PKMRKkQYPKrOQR1R0LamFuLhl7E="
   "resolved" "https://registry.npm.taobao.org/@vue/cli-service/download/@vue/cli-service-4.5.9.tgz?cache=0&sync_timestamp=1605596056663&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40vue%2Fcli-service%2Fdownload%2F%40vue%2Fcli-service-4.5.9.tgz"
   "version" "4.5.9"
@@ -1792,10 +1792,10 @@
   optionalDependencies:
     "vue-loader-v16" "npm:vue-loader@^16.0.0-beta.7"
 
-"@vue/cli-shared-utils@^4.5.9":
-  "integrity" "sha1-SHzqS0KC9N/5B+59iruo3Q3QPM0="
-  "resolved" "https://registry.npm.taobao.org/@vue/cli-shared-utils/download/@vue/cli-shared-utils-4.5.9.tgz"
-  "version" "4.5.9"
+"@vue/cli-shared-utils@^4.5.11", "@vue/cli-shared-utils@^4.5.9":
+  "integrity" "sha512-+aaQ+ThQG3+WMexfSWNl0y6f43edqVqRNbguE53F3TIH81I7saS5S750ayqXhZs2r6STJJyqorQnKtAWfHo29A=="
+  "resolved" "https://registry.npmjs.org/@vue/cli-shared-utils/-/cli-shared-utils-4.5.11.tgz"
+  "version" "4.5.11"
   dependencies:
     "@hapi/joi" "^15.0.1"
     "chalk" "^2.4.2"
@@ -2494,7 +2494,7 @@
   "resolved" "https://registry.npm.taobao.org/babel-core/download/babel-core-7.0.0-bridge.0.tgz"
   "version" "7.0.0-bridge.0"
 
-"babel-jest@^24.9.0":
+"babel-jest@^24.9.0", "babel-jest@>= 24 < 27":
   "integrity" "sha1-P8Mny4RnuJ0U17xw4xUQSng8zVQ="
   "resolved" "https://registry.npm.taobao.org/babel-jest/download/babel-jest-24.9.0.tgz"
   "version" "24.9.0"
@@ -2710,7 +2710,7 @@
   "resolved" "https://registry.npm.taobao.org/bn.js/download/bn.js-4.11.9.tgz"
   "version" "4.11.9"
 
-"bn.js@^4.4.0":
+"bn.js@^4.11.9":
   "integrity" "sha1-JtVWgpRY+dHoH8SJUkk9C6NQeCg="
   "resolved" "https://registry.npm.taobao.org/bn.js/download/bn.js-4.11.9.tgz"
   "version" "4.11.9"
@@ -2791,7 +2791,7 @@
   dependencies:
     "fill-range" "^7.0.1"
 
-"brorand@^1.0.1":
+"brorand@^1.0.1", "brorand@^1.1.0":
   "integrity" "sha1-EsJe/kCkXjwyPrhnWgoM5XsiNx8="
   "resolved" "https://registry.npm.taobao.org/brorand/download/brorand-1.1.0.tgz"
   "version" "1.1.0"
@@ -4417,17 +4417,17 @@
   "version" "1.0.1"
 
 "elliptic@^6.5.3":
-  "integrity" "sha1-y1nrLv2vc6C9eMzXAVpirW4Pk9Y="
-  "resolved" "https://registry.npm.taobao.org/elliptic/download/elliptic-6.5.3.tgz?cache=0&sync_timestamp=1592492847950&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Felliptic%2Fdownload%2Felliptic-6.5.3.tgz"
-  "version" "6.5.3"
+  "integrity" "sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ=="
+  "resolved" "https://registry.npmjs.org/elliptic/-/elliptic-6.5.4.tgz"
+  "version" "6.5.4"
   dependencies:
-    "bn.js" "^4.4.0"
-    "brorand" "^1.0.1"
+    "bn.js" "^4.11.9"
+    "brorand" "^1.1.0"
     "hash.js" "^1.0.0"
-    "hmac-drbg" "^1.0.0"
-    "inherits" "^2.0.1"
-    "minimalistic-assert" "^1.0.0"
-    "minimalistic-crypto-utils" "^1.0.0"
+    "hmac-drbg" "^1.0.1"
+    "inherits" "^2.0.4"
+    "minimalistic-assert" "^1.0.1"
+    "minimalistic-crypto-utils" "^1.0.1"
 
 "emoji-regex@^7.0.1":
   "integrity" "sha1-kzoEBShgyF6DwSJHnEdIqOTHIVY="
@@ -5654,7 +5654,7 @@
   "resolved" "https://registry.npm.taobao.org/highlight.js/download/highlight.js-10.4.0.tgz"
   "version" "10.4.0"
 
-"hmac-drbg@^1.0.0":
+"hmac-drbg@^1.0.1":
   "integrity" "sha1-0nRXAQJabHdabFRXk+1QL8DGSaE="
   "resolved" "https://registry.npm.taobao.org/hmac-drbg/download/hmac-drbg-1.0.1.tgz"
   "version" "1.0.1"
@@ -5970,9 +5970,9 @@
   "version" "2.0.3"
 
 "ini@^1.3.4":
-  "integrity" "sha1-7uJfVtscnsYIXgwid4CD9Zar+Sc="
-  "resolved" "https://registry.npm.taobao.org/ini/download/ini-1.3.5.tgz"
-  "version" "1.3.5"
+  "integrity" "sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew=="
+  "resolved" "https://registry.npmjs.org/ini/-/ini-1.3.8.tgz"
+  "version" "1.3.8"
 
 "inquirer@^7.0.0", "inquirer@^7.1.0":
   "integrity" "sha1-BNF2sq8Er8FXqD/XwQDpjuCq0AM="
@@ -6869,7 +6869,7 @@
     "merge-stream" "^2.0.0"
     "supports-color" "^7.0.0"
 
-"jest@^24.9.0":
+"jest@^24.9.0", "jest@>= 24 < 27 ", "jest@>=24 <25":
   "integrity" "sha1-mH0pDAWgi1LFYYjBAC42jtsAcXE="
   "resolved" "https://registry.npm.taobao.org/jest/download/jest-24.9.0.tgz?cache=0&sync_timestamp=1604470829060&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjest%2Fdownload%2Fjest-24.9.0.tgz"
   "version" "24.9.0"
@@ -7821,7 +7821,7 @@
   "resolved" "https://registry.npm.taobao.org/minimalistic-assert/download/minimalistic-assert-1.0.1.tgz"
   "version" "1.0.1"
 
-"minimalistic-crypto-utils@^1.0.0", "minimalistic-crypto-utils@^1.0.1":
+"minimalistic-crypto-utils@^1.0.1":
   "integrity" "sha1-9sAMHAsIIkblxNmd+4x8CDsrWCo="
   "resolved" "https://registry.npm.taobao.org/minimalistic-crypto-utils/download/minimalistic-crypto-utils-1.0.1.tgz"
   "version" "1.0.1"
@@ -9695,16 +9695,9 @@
   dependencies:
     "glob" "^7.1.3"
 
-"rimraf@^3.0.0":
-  "integrity" "sha1-8aVAK6YiCtUswSgrrBrjqkn9Bho="
-  "resolved" "https://registry.npm.taobao.org/rimraf/download/rimraf-3.0.2.tgz?cache=0&sync_timestamp=1587992602190&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frimraf%2Fdownload%2Frimraf-3.0.2.tgz"
-  "version" "3.0.2"
-  dependencies:
-    "glob" "^7.1.3"
-
-"rimraf@^3.0.2":
-  "integrity" "sha1-8aVAK6YiCtUswSgrrBrjqkn9Bho="
-  "resolved" "https://registry.npm.taobao.org/rimraf/download/rimraf-3.0.2.tgz?cache=0&sync_timestamp=1587992602190&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frimraf%2Fdownload%2Frimraf-3.0.2.tgz"
+"rimraf@^3.0.0", "rimraf@^3.0.2":
+  "integrity" "sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA=="
+  "resolved" "https://registry.npmjs.org/rimraf/-/rimraf-3.0.2.tgz"
   "version" "3.0.2"
   dependencies:
     "glob" "^7.1.3"
@@ -10831,9 +10824,9 @@
   "resolved" "https://registry.npm.taobao.org/tryer/download/tryer-1.0.1.tgz"
   "version" "1.0.1"
 
-"ts-jest@^24.0.0", "ts-jest@^24.2.0":
-  "integrity" "sha1-uXgU4+qzWeqEChrBEt6uaKpECGk="
-  "resolved" "https://registry.npm.taobao.org/ts-jest/download/ts-jest-24.3.0.tgz"
+"ts-jest@^24.2.0", "ts-jest@>= 24 < 27 ":
+  "integrity" "sha512-Hb94C/+QRIgjVZlJyiWwouYUF+siNJHJHknyspaOcZ+OQAIdFG/UrdQVXw/0B8Z3No34xkUXZJpOTy9alOWdVQ=="
+  "resolved" "https://registry.npmjs.org/ts-jest/-/ts-jest-24.3.0.tgz"
   "version" "24.3.0"
   dependencies:
     "bs-logger" "0.x"
@@ -10963,7 +10956,7 @@
   "resolved" "https://registry.npm.taobao.org/typedarray/download/typedarray-0.0.6.tgz"
   "version" "0.0.6"
 
-"typescript@~3.9.3":
+"typescript@>= 3.x", "typescript@~3.9.3":
   "integrity" "sha1-mNYApevcOPQMsndSLxLcgA6eJfo="
   "resolved" "https://registry.npm.taobao.org/typescript/download/typescript-3.9.7.tgz"
   "version" "3.9.7"
@@ -11284,15 +11277,15 @@
     "vue-template-es2015-compiler" "^1.6.0"
 
 "vue-jest@^5.0.0-0":
-  "integrity" "sha1-5aHrN2r65KW0sgchi+/DYUNp6qk="
-  "resolved" "https://registry.npm.taobao.org/vue-jest/download/vue-jest-5.0.0-alpha.7.tgz?cache=0&sync_timestamp=1606792215762&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-jest%2Fdownload%2Fvue-jest-5.0.0-alpha.7.tgz"
-  "version" "5.0.0-alpha.7"
+  "integrity" "sha512-4FqH69T6X6rOglrEui/mDWvOTGB9ammmCXLVdS4s524D4Emx8fBC4sKAPFAUZfbWpYh/7i7xWoPwF4agfyGWwA=="
+  "resolved" "https://registry.npmjs.org/vue-jest/-/vue-jest-5.0.0-alpha.8.tgz"
+  "version" "5.0.0-alpha.8"
   dependencies:
     "@babel/plugin-transform-modules-commonjs" "^7.2.0"
     "chalk" "^2.1.0"
     "convert-source-map" "^1.6.0"
     "extract-from-css" "^0.4.4"
-    "ts-jest" "^24.0.0"
+    "tsconfig" "^7.0.0"
 
 "vue-jss@0.0.4":
   "integrity" "sha1-Dzku2ctsxycAXtIYkr2DkocJOZM="
@@ -11342,7 +11335,7 @@
   dependencies:
     "is-plain-object" "3.0.1"
 
-"vue@^3.0.0", "vue@^3.0.4", "vue@>=3.0.3", "vue@>=3.0.4":
+"vue@^3.0.0", "vue@^3.0.0-0", "vue@^3.0.4", "vue@>=3.0.3", "vue@>=3.0.4":
   "integrity" "sha1-hyxlwUP1cXvVOHxhYT2fVfTMD0M="
   "resolved" "https://registry.npm.taobao.org/vue/download/vue-3.0.4.tgz?cache=0&sync_timestamp=1606946204934&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-3.0.4.tgz"
   "version" "3.0.4"
@@ -11757,8 +11750,8 @@
     "decamelize" "^1.2.0"
 
 "yargs-parser@10.x":
-  "integrity" "sha1-cgImW4n36eny5XZeD+c1qQXtuqg="
-  "resolved" "https://registry.npm.taobao.org/yargs-parser/download/yargs-parser-10.1.0.tgz?cache=0&sync_timestamp=1604886694625&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fyargs-parser%2Fdownload%2Fyargs-parser-10.1.0.tgz"
+  "integrity" "sha512-VCIyR1wJoEBZUqk5PA+oOBF6ypbwh5aNB3I50guxAL/quggdfs4TtNHQrSazFA3fYZ+tEqfs0zIGlv0c/rgjbQ=="
+  "resolved" "https://registry.npmjs.org/yargs-parser/-/yargs-parser-10.1.0.tgz"
   "version" "10.1.0"
   dependencies:
     "camelcase" "^4.1.0"
